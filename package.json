@@ -1,0 +1,46 @@
+{
+  "name": "screensense",
+  "version": "1.1.0",
+  "description": "Background Windows app that captures screenshots via tray shortcut and optionally sends them to AI.",
+  "main": "src/main.js",
+  "author": "Developer",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dev": "cross-env NODE_ENV=development electron .",
+    "build": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "axios": "^1.6.7",
+    "date-fns": "^3.6.0",
+    "dotenv": "^16.4.5",
+    "electron-log": "^5.1.2",
+    "openai": "^4.47.3",
+    "screenshot-desktop": "^1.15.0",
+    "sharp": "^0.33.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^29.3.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.screensense.app",
+    "productName": "ScreenSense",
+    "files": [
+      "src/**/*",
+      "config.json",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "build"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "build/icon.ico"
+    }
+  }
+}

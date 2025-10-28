@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ScreenSense</title>
+    <link rel="stylesheet" href="popup.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body>
+    <div class="popup">
+      <div class="popup__header">
+        <div class="popup__header-left">
+          <span class="popup__status" data-role="status">Ready</span>
+          <span class="popup__category" data-role="category" hidden></span>
+        </div>
+        <button class="popup__close" data-action="close" title="Dismiss">&times;</button>
+      </div>
+
+      <main class="popup__content">
+        <div class="popup__file" data-role="file">Waiting for capture…</div>
+        <div class="popup__description" data-role="description">AI summary will appear here.</div>
+        <div class="popup__description popup__description--enhanced" data-role="enhanced" hidden></div>
+        <div class="popup__meta">
+          <span class="popup__timestamp" data-role="timestamp"></span>
+          <span class="popup__shortcut" data-role="shortcut"></span>
+        </div>
+        <section class="popup__actions" data-role="actions" hidden>
+          <h2 class="popup__section-title">Next Actions</h2>
+          <div class="popup__actions-list" data-role="actions-list"></div>
+        </section>
+        <section class="popup__resources" data-role="resources" hidden>
+          <h2 class="popup__section-title">Resources</h2>
+          <div class="popup__resources-list" data-role="resources-list"></div>
+        </section>
+      </main>
+
+      <footer class="popup__footer">
+        <button class="popup__button" data-action="enhance">Enhance</button>
+        <button class="popup__button popup__button--danger" data-action="delete">Delete</button>
+      </footer>
+
+      <div class="popup__toast" data-role="toast" hidden></div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
